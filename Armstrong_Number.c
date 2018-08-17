@@ -16,7 +16,7 @@ int main (void)
 {
     int num, input, first, second, third, decimal ;
     char yesorno ;
-    printf("******************** \n");
+    printf("************************ \n");
     printf("1. Armstrong number identification \n");
     printf("2. Sorting (Ascending) \n");
     printf("3. Decimal to Binary \n");
