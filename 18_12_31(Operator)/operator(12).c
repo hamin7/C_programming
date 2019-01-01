@@ -8,14 +8,14 @@ int main() {
 	int total;
 	double average;
 
+	printf("국어 : ");
 	scanf("%d", &korean);
-	printf("국어 : %d \n", korean);
 
+	printf("영어 : ");
 	scanf("%d", &english);
-	printf("영어 : %d \n", english);
 
+	printf("수학 : ");
 	scanf("%d", &math);
-	printf("수학 : %d \n", math);
 
 	total = (korean + english + math);
 	printf("총점 : %d \n", total);
