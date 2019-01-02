@@ -2,61 +2,54 @@
 
 int main() {
 
-	int year, month;
-	int res;
-	printf("연도와 월을 입력하세요 : ");
-	scanf("%d %d ", &year, &month);
+	int age, dis, fee;
+	printf("잔액 : 10000원 \n");
+	printf("나이는? : ");
+	scanf("%d", &age);
+	printf("이용한 거리(km)는? : ");
+	scanf("%d", &dis);
 
-	res = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
-	res ? 1 : 0;     // 1이면 윤년
+	if ((age >= 7) && (age <= 12))
+	{
+		fee = 450;
+		printf("승객구분 : 어린이 \n");
+	}
+	else if ((age >= 13) && (age <= 18)) {
+		fee = 720;
+		printf("승객구분 : 청소년 \n");
+	}
+	else if ((age >= 19) && (age <= 64)) {
+		fee = 1250;
+		printf("승객구분 : 어른 \n");
+	}
+	else if (age >= 65) {
+		fee = 0;
+		printf("승객구분 : 경로 \n");
+	}
+	else{
+		fee = 0;
+		printf("승객구분 : 유아 \n");
+	}
 
-	if (res == 1)
-	{
-		switch (month) {
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			printf("%d월의 마지막 날은 %d일 입니다", month, 31);
-			break;
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			printf("%d월의 마지막 날은 %d일 입니다", month, 30);
-			break;
-		default:
-			printf("%d월의 마지막 날은 %d일 입니다", month, 29);
-		}
+	printf("이용거리 : %d km \n", dis);
+	
+	if(dis > 50){
+		int add;
+		add = ((dis - 50) / 8)+1;
+		fee = fee + (add * 100);
+		dis -= 50;
 	}
-	else if (res == 0)
+	else if (dis > 10)
 	{
-		switch (month) {
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			printf("%d월의 마지막 날은 %d일 입니다", month, 31);
-			break;
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			printf("%d월의 마지막 날은 %d일 입니다", month, 30);
-			break;
-		default:
-			printf("%d월의 마지막 날은 %d일 입니다", month, 28);
-		}
+		int add;
+		add = ((dis - 10) / 5)+1;
+		fee = fee + (add * 100);
 	}
+
+	printf("금액 %d \n", fee);
+	printf("잔액 %d \n", 10000 - fee);
+
 
 	return 0;
 }
 
-// 고칠것
-// 자동완셩 단축키 tab
