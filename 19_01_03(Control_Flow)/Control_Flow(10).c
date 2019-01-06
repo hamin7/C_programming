@@ -21,7 +21,6 @@ int main()
 		else if (num < 0) {
 			printf("양수를 입력하세요\n");
 		}
-
 		return 0;
 	} while (num != 0);
 }
