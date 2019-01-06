@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int Change(int balance);     // 잔돈 반환 함수 선언.
-int BuyItem(int select, int balance);
-int temp;
+int BuyItem(int select, int balance);     // 음료수 구매 함수.
+int temp;      // 잔액이 부족할 시 BuyItem함수에서 -1을 리턴하라고 했는데 그러면 본래있던 잔액 처리에 문제가 있으므로 전역변수 temp 이용.
 
 int main()
 {
@@ -105,5 +105,3 @@ int Change(int balance)     // 잔돈 반환 함수 정의.
 	printf("100원권 %d개\n\n", ((balance % 1000) % 500) / 100);
 	return 0;
 }
-
-
