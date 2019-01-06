@@ -21,6 +21,10 @@ int main()
 			printf("잔액이 부족합니다 \n\n");
 			balance = temp;
 		}
+		else if (balance == -2) {
+			printf("자판기를 종료합니다 \n");
+			return 0;
+		}
 	}
 }
 
@@ -89,11 +93,8 @@ int BuyItem(int select, int balance)
 		balance = Change(balance);
 		return balance;
 	case 0:
-		goto end;
+		return -2;
 	}
-end:
-	printf("이용해 주셔서 감사합니다. \n");
-	return 0;
 }
 
 int Change(int balance)     // 잔돈 반환 함수 정의.
@@ -104,3 +105,5 @@ int Change(int balance)     // 잔돈 반환 함수 정의.
 	printf("100원권 %d개\n\n", ((balance % 1000) % 500) / 100);
 	return 0;
 }
+
+
