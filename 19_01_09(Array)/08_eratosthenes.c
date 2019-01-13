@@ -4,25 +4,25 @@
 #define ROW_SIZE 12
 #define COL_SIZE 10
 
-// 2~120»çÀÌÀÇ ¼Ò¼ö ±¸ÇÏ±â
-// "¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼" ¹æ½ÄÀ¸·Î 2Â÷¿ø ¹è¿­·Î ±¸Çö
-// (1Â÷¿øÀ¸·Î ³ª¿­µÈ ¼ö¸¦ 2Â÷¿ø Çü½ÄÀ¸·Î º¯È¯ÇÏ°í, 2Â÷¿øÀÇ À§Ä¡ µ¥ÀÌÅÍ·Î 1Â÷¿ø À§Ä¡¸¦ Ã£´Â ÈÆ·Ã) 
+// 2~120ì‚¬ì´ì˜ ì†Œìˆ˜ êµ¬í•˜ê¸°
+// "ì—ë¼í† ìŠ¤í…Œë„¤ìŠ¤ì˜ ì²´" ë°©ì‹ìœ¼ë¡œ 2ì°¨ì› ë°°ì—´ë¡œ êµ¬í˜„
+// (1ì°¨ì›ìœ¼ë¡œ ë‚˜ì—´ëœ ìˆ˜ë¥¼ 2ì°¨ì› í˜•ì‹ìœ¼ë¡œ ë³€í™˜í•˜ê³ , 2ì°¨ì›ì˜ ìœ„ì¹˜ ë°ì´í„°ë¡œ 1ì°¨ì› ìœ„ì¹˜ë¥¼ ì°¾ëŠ” í›ˆë ¨) 
 int main() {
 	int prime[ROW_SIZE][COL_SIZE];
 
 	for (int i = 0; i < ROW_SIZE; i++) {
 		for (int j = 0; j < COL_SIZE; j++) {
-			prime[i][j] = i * COL_SIZE + j + 1;		// 1~120À» ´ëÀÔ
+			prime[i][j] = i * COL_SIZE + j + 1;		// 1~120ì„ ëŒ€ìž…
 		}
 	}
 
 	for (int i = 0; i < ROW_SIZE; i++) {
 		for (int j = 0; j < COL_SIZE; j++) {
-			if (prime[i][j] < 2) continue;	// 1À» Á¦¿ÜÇÏ°í 2ºÎÅÍ ½ÃÀÛ
+			if (prime[i][j] < 2) continue;	// 1ì„ ì œì™¸í•˜ê³  2ë¶€í„° ì‹œìž‘
 			if (prime[i][j] > 0) {
-				// ÀúÀåµÈ °ªÀÌ 0ÀÌ ¾Æ´Ï¸é ¼Ò¼ö
+				// ì €ìž¥ëœ ê°’ì´ 0ì´ ì•„ë‹ˆë©´ ì†Œìˆ˜
 				printf("prime[%d][%d] = %d\n", i, j, prime[i][j]);
-				// ¼Ò¼öÀÇ Á¦°öºÎÅÍ ±× ÀÌÈÄ ¸ðµç ¹è¼ö¸¦ »èÁ¦
+				// ì†Œìˆ˜ì˜ ì œê³±ë¶€í„° ê·¸ ì´í›„ ëª¨ë“  ë°°ìˆ˜ë¥¼ ì‚­ì œ
 				int num = prime[i][j] * prime[i][j];
 				while (num <= ROW_SIZE * COL_SIZE) {
 					printf("%d ", num);
@@ -33,7 +33,5 @@ int main() {
 			}
 		}
 	}
-
-
 	return 0;
 }
