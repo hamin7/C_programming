@@ -4,7 +4,7 @@
 
 int compare(char *text, char *search);
 
-int exitProgram(char *text, char *exitCode);
+int exitProgram(char *text, char *exitCode);      // text와 exitCode(exit)을 비교하여 exit이 입력됐다면 프로그램 종료하는 함수.
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 		printf("문자열 : \n");       // 기준이 될 영문자 패턴 입력.
 		scanf("%s", text);
 
-		exitValue = exitProgram(text, exitCode);
+		exitValue = exitProgram(text, exitCode);        // text와 exitCode(exit)을 비교하여 exit이 입력됐다면 프로그램 종료하는 함수.
 		if (exitValue == 0) {
 			goto EXIT;
 		}
@@ -32,7 +32,7 @@ int main()
 		if ((value == 1) && (strlen(text) == strlen(search))) {      // 함수에서 비교한 문자열이 같고, 문자열 길이가 같다면 (길이를 비교하는 이유는 search가 text와 같지만 그 후에 추가로 다른 문자가 더 있을 수 도 있기 때문)
 			printf("패턴에 맞습니다. \n\n");
 		}
-		else if (value == -1)                                 // *을 포함하는 search의 경우.               
+		else if (value == -1)                                 // *을 포함하는 search의 경우.
 		{
 			if ((*(text + strlen(text) - 1)) == (*(search + strlen(search) - 1)))     // 마지막 캐릭터가 같은지 비교.
 			{
@@ -44,16 +44,16 @@ int main()
 		}
 		else if (value == 0) {              // 함수에서 비교한 문자열이 다르다면
 			printf("패턴에 맞지 않습니다. \n\n");
-		} 
+		}
 	}
 	EXIT:
 	printf("프로그램을 종료합니다 \n");
 	return 0;
 }
 
-int exitProgram(const char *text, const char *exit) {
+int exitProgram(const char *text, const char *exit) {     // text와 exitCode(exit)을 비교하여 exit이 입력됐다면 프로그램 종료하는 함수
 	for (int i = 0; i < strlen(text); ) {              // 검색패턴 문자열의 길이 만큼 비교
-		if ((*text == *exit)) {          // str1과 str2의 문자열이 같거나, str2의 문자가 ?인경우
+		if ((*text == *exit)) {          // str1과 str2의 문자열이 같다면 각각 포인터를 한 칸 씩 옮겨줌
 			text++, exit++;                            // str1과 str2를 ++ 해줌
 		}
 		else {
