@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int compare(char *text, char *search);
 
-int exit(char *text, char *exitCode);
+int exitProgram(char *text, char *exitCode);
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
 		printf("문자열 : \n");       // 기준이 될 영문자 패턴 입력.
 		scanf("%s", text);
 
-		exitValue = exit(text, exitCode);
+		exitValue = exitProgram(text, exitCode);
 		if (exitValue == 0) {
 			goto EXIT;
 		}
@@ -50,7 +51,7 @@ int main()
 	return 0;
 }
 
-int exit(const char *text, const char *exit) {
+int exitProgram(const char *text, const char *exit) {
 	for (int i = 0; i < strlen(text); ) {              // 검색패턴 문자열의 길이 만큼 비교
 		if ((*text == *exit)) {          // str1과 str2의 문자열이 같거나, str2의 문자가 ?인경우
 			text++, exit++;                            // str1과 str2를 ++ 해줌
