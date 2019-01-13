@@ -8,6 +8,7 @@ int main()
 	int menu;
 	int dong, floor, ho;
 
+
 	do {
 		printf("[가구원수 조사]\n");
 		printf("원하는 작업을 선택하세요.\n");
@@ -26,16 +27,16 @@ int main()
 			apt[i - 1][j - 1][k - 1] = num;
 		}
 		else if (menu == 2) {
-			for (int k = 0; k < 2; k++) {
-				printf("%d동\n", k);
-				for (int j = 3; j > 0; j--) {
-					printf("%d층 [", j);
-					for (int i = 0; i < 4; i++) {
-						printf("%d", apt[i][j-1][k]);
+			for (int i = 0; i < 2; i++) {
+				printf("%d동 \n", i + 1);
+				for (int j = 2; j >= 0; j--) {
+					printf("%d층 [", j + 1);
+					for (int k = 0; k < 4; k++) {
+						printf("%d ", apt[i][j][k]);
 					}
 					printf("]\n");
 				}
-				printf("]\n");
+				printf("\n");
 			}
 
 		}
