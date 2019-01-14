@@ -29,8 +29,6 @@ int main() {
 		exit(1);
 	}
 
-
-
 	printf("평균 점수는 : %lf", (double)sum / n);
 
 	return 0;
