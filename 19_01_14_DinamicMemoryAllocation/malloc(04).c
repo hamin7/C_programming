@@ -2,7 +2,6 @@
 #include <string.h>
 #include <limits.h>
 
-
 int main() {
 	int n = 3;
 	int i = 0;
@@ -41,3 +40,5 @@ int main() {
 	}
 	return 0;
 }
+
+// 헷갈렸던 문제!!!
